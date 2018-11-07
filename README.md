@@ -14,6 +14,8 @@ There are two branches in this repository:
 * karma: tests built and run using karma
 * jest: test runner converted to jest, which has a superset language for jasmine.  usually, you won't notice. 
   * note that jest checks on file changes and runs ONLY the appropriate test!
+  
+# use the pull requests to view the code changes between karma and jest
 
 
 
