@@ -33,3 +33,16 @@ start up at least 3 terminal windows
   * karma branch: npm test
   * jest branch: npm test or npm run test:watch
     * note npm run test:ci would be for continuous integration
+
+# Sources:
+configuration:
+* https://dev.to/meltedspark/angular-6-ng-test-with-jest-in-3-minutes-43l8 
+* https://www.xfive.co/blog/testing-angular-faster-jest/
+* https://github.com/thymikee/jest-preset-angular/blob/master/example/src/jestGlobalMocks.ts
+* https://github.com/meltedspark/angular-builders/tree/master/packages/jest#builder-options
+
+getting async and observables to work: 
+* https://medium.com/spektrakel-blog/angular-testing-snippets-httpclient-d1dc2f035eb8
+* https://stackoverflow.com/questions/44985957/angular2-unit-test-not-using-mock-
+
+
