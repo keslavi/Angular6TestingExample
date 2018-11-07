@@ -10,7 +10,7 @@ import { ExampleService } from './services/example.service';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     /*
-      think of this as the app.module; it needs to be built for every dependency.
+      think of TestBed as the app.module; it needs to be built for every dependency.
       we can probably abstract some of this into a common configuration
     */
     TestBed.configureTestingModule({
@@ -44,15 +44,13 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to testingsample!');
   });
 
+  //note: async because the service is using observables
   it (`should return data from mock service`,
-    async(inject([ExampleService],(svc : ExampleService) => { 
+    async(inject([ExampleService], (svc: ExampleService) => {
       svc.get().subscribe( (next) => {
         expect(next).toEqual(mockData);
         //sample fail test
         //expect(next).toEqual({messgae: 'nope'});
-      })
-
+      });
     })));
-
-
 });

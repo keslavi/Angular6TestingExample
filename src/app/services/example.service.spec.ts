@@ -15,8 +15,7 @@ describe('ExampleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule, 
-        HttpClientModule
+        HttpClientTestingModule
       ],
       providers: [ExampleService]
     });
@@ -31,18 +30,18 @@ describe('ExampleService', () => {
     expect(service).toBeTruthy();
   });
 
-  it(`should respond with fake data`, 
+  it(`should respond with fake data`,
   // 1. declare as async test since the HttpClient works with Observables
   async(
     // 2. inject HttpClient and HttpTestingController into the test
     inject([
-      ExampleService, 
+      ExampleService,
       HttpTestingController
-    ],(
+    ], (
       service: ExampleService,
       backend: HttpTestingController
     ) => {
-      //3. perform the request
+      // 3. perform the request
       service.get().subscribe(
         (next) => {
           expect(next).toEqual(mockData);
@@ -50,17 +49,17 @@ describe('ExampleService', () => {
 
       // 4. HttpTestingController supersedes `MockBackend` from the "old" Http package
       // here two, it's significantly less boilerplate code needed to verify an expected request
-      //additional remarked code to demonstrate POST with body
+      // additional remarked code to demonstrate POST with body
       backend.expectOne((req: HttpRequest<any>) => {
-        //const body = new HttpParams({ fromString: req.body });
+        // const body = new HttpParams({ fromString: req.body });
         return req.url === '/api/'
-          && req.method === 'GET'
+          && req.method === 'GET';
           // && req.headers.get('Content-Type') === 'application/x-www-form-urlencoded'
           // && body.get('user') === 'foo'
           // && body.get('password') === 'bar';
       }, `Get Results`)
-      .flush(mockData);  //fire the subscriber
-
+      .flush(mockData);  // fire the subscriber
+      //.flush({aaa: 'FAILED' });  // fail test
     })));
 
 

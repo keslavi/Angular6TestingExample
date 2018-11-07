@@ -6,9 +6,9 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ExampleService {
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   get() {
-  	return this.http.get('/api/');
+    return this.http.get('/api/');
   }
 }
