@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+<div>
+  call service (assuming koa is running in /server)
+  <br/><button (click)='btnCallService()'> call service</button>
+  <div *ngIf='vm.res'>
+    <textarea rows='10' cols='50'>{{vm.res|json}}</textarea>
+  </div>  
+
+<router-outlet></router-outlet>
