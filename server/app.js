@@ -1,12 +1,12 @@
 const Koa = require ('koa');
-const morgan = require('koa-morgan')
+//const morgan = require('koa-morgan')
 const logger = require('koa-morgan');
 
 const fs = require('fs')
  
-// create a write stream (in append mode)
-const accessLogStream = fs
-	.createWriteStream(__dirname + '/access.log',{ flags: 'a' })
+// // create a write stream (in append mode)
+// const accessLogStream = fs
+// 	.createWriteStream(__dirname + '/access.log',{ flags: 'a' })
 
 const app = new Koa;
 const port = 3000;

@@ -59,7 +59,7 @@ describe('ExampleService', () => {
           // && body.get('password') === 'bar';
       }, `Get Results`)
       .flush(mockData);  // fire the subscriber
-      //.flush({aaa: 'FAILED' });  // fail test
+      //.flush({aaa: 'FAILED!' });  // fail test
     })));
 
 
